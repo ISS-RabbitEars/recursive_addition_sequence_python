@@ -91,9 +91,11 @@ def run(frame):
 		ymax=0
 	ymin=min(y)
 	setplot2(p*xmin,p*xmax,p*ymin,p*ymax)
-	#plt.title('Fibonacci Spiral')
-	plt.suptitle('Recursive Addition Sequence')
-	plt.title('seed = '+str(fas))
+	if(fas==0):
+		plt.title('Fibonacci Spiral')
+	else:
+		plt.suptitle('Recursive Addition Sequence')
+		plt.title('seed = '+str(fas))
 
 ani=animation.FuncAnimation(fig,run,interval=1,frames=nx*fs)
 writervideo = animation.FFMpegWriter(fps=frps)
